@@ -1,12 +1,17 @@
-// import React from "react";
-
+import { Fragment } from "react";
+import Footer from "./components/footer/footer";
+import { Outlet } from "react-router-dom";
 import Navbar from "./components/Navbar/Navbar";
 
 function App() {
   return (
-    <div>
+    <Fragment>
       <Navbar />
-    </div>
+
+      <Outlet />
+
+      <Footer />
+    </Fragment>
   );
 }
 
