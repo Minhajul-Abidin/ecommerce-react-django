@@ -1,6 +1,5 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import App from "./App.jsx";
 import "./index.css";
 import {
   Route,
@@ -8,10 +7,12 @@ import {
   createBrowserRouter,
   createRoutesFromElements,
 } from "react-router-dom";
-import Home from "./pages/Home/Home";
-import About from "./pages/About/About";
-import ProductDetails from "./pages/ProductDetails/ProductDetails";
-import ProductProvider from "./contexts/ProductContext/ProductContext.jsx";
+import App from "./app";
+import Home from "./pages/Home.jsx";
+import About from "./pages/About.jsx";
+import ProductDetails from "./pages/ProductDetails.jsx";
+import ProductProvider from "./contexts/ProductContext.jsx";
+import SidebarProvider from "./contexts/SidebarContext.jsx";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -24,9 +25,11 @@ const router = createBrowserRouter(
 );
 
 ReactDOM.createRoot(document.getElementById("root")).render(
-  <ProductProvider>
-    <React.StrictMode>
-      <RouterProvider router={router} />
-    </React.StrictMode>
-  </ProductProvider>
+  <SidebarProvider>
+    <ProductProvider>
+      <React.StrictMode>
+        <RouterProvider router={router} />
+      </React.StrictMode>
+    </ProductProvider>
+  </SidebarProvider>
 );
