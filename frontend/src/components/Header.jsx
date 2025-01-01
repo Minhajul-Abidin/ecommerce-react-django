@@ -1,5 +1,6 @@
 "use client";
 
+import { Link } from "react-router-dom";
 import { useState } from "react";
 import {
   Dialog,
@@ -74,15 +75,13 @@ function Header() {
         className="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8"
       >
         <div className="flex lg:flex-1">
-          <a href="#" className="-m-1.5 p-1.5">
-            <span className="sr-only">Your Company</span>
-            <img
-              alt=""
-              src="https://tailwindui.com/plus/img/logos/mark.svg?color=indigo&shade=600"
-              className="h-8 w-auto"
-            />
-          </a>
+          <Link to={"/"}>
+            <span className="text-3xl font-bold text-gray-900 tracking-[-0.12em]">
+              coconut.
+            </span>
+          </Link>
         </div>
+
         <div className="flex lg:hidden">
           <button
             type="button"
@@ -161,9 +160,11 @@ function Header() {
           </a>
         </PopoverGroup>
         <div className="hidden lg:flex lg:flex-1 lg:justify-end">
-          <a href="#" className="text-sm/6 font-semibold text-gray-900">
-            Log in <span aria-hidden="true">&rarr;</span>
-          </a>
+          <Link to={"/login"}>
+            <a href="#" className="text-sm/6 font-semibold text-gray-900">
+              Log in <span aria-hidden="true">&rarr;</span>
+            </a>
+          </Link>
         </div>
       </nav>
       <Dialog
