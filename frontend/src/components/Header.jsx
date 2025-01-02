@@ -2,6 +2,7 @@
 
 import { Link } from "react-router-dom";
 import { useState } from "react";
+import { LuShoppingCart } from "react-icons/lu";
 import {
   Dialog,
   DialogPanel,
@@ -94,7 +95,7 @@ function Header() {
         </div>
         <PopoverGroup className="hidden lg:flex lg:gap-x-12">
           <Popover className="relative">
-            <PopoverButton className="flex items-center gap-x-1 text-sm/6 font-semibold text-gray-900">
+            <PopoverButton className="flex items-center gap-x-1 text-sm/6 font-semibold text-gray-900 outline-none">
               Product
               <ChevronDownIcon
                 aria-hidden="true"
@@ -149,24 +150,48 @@ function Header() {
             </PopoverPanel>
           </Popover>
 
-          <a href="#" className="text-sm/6 font-semibold text-gray-900">
-            Features
-          </a>
-          <a href="#" className="text-sm/6 font-semibold text-gray-900">
-            Marketplace
-          </a>
-          <a href="#" className="text-sm/6 font-semibold text-gray-900">
-            Company
-          </a>
-        </PopoverGroup>
-        <div className="hidden lg:flex lg:flex-1 lg:justify-end">
-          <Link to={"/login"}>
+          <Link>
             <a href="#" className="text-sm/6 font-semibold text-gray-900">
+              Features
+            </a>
+          </Link>
+
+          <Link>
+            <a href="#" className="text-sm/6 font-semibold text-gray-900">
+              Marketplace
+            </a>
+          </Link>
+
+          <Link>
+            <a href="#" className="text-sm/6 font-semibold text-gray-900">
+              Company
+            </a>
+          </Link>
+        </PopoverGroup>
+
+        <div className="hidden lg:flex lg:flex-1 lg:justify-end gap-x-6">
+          <Link to={"/cart"}>
+            <a
+              href="#"
+              className="text-gray-900 text-3xl justify-center items-center"
+            >
+              <LuShoppingCart />
+            </a>
+          </Link>
+          <Link to={"/login"}>
+            <a
+              href="#"
+              className="text-sm/6 font-semibold text-gray-900 border-solid border-2 border-gray-900 rounded-2xl px-4 py-2"
+            >
               Log in <span aria-hidden="true">&rarr;</span>
             </a>
           </Link>
         </div>
       </nav>
+      <div className="flex items-center justify-center h-px mx-24 bg-gray-700">
+        {" "}
+      </div>
+
       <Dialog
         open={mobileMenuOpen}
         onClose={setMobileMenuOpen}
@@ -216,32 +241,46 @@ function Header() {
                     ))}
                   </DisclosurePanel>
                 </Disclosure>
-                <a
-                  href="#"
-                  className="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-gray-50"
-                >
-                  Features
-                </a>
-                <a
-                  href="#"
-                  className="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-gray-50"
-                >
-                  Marketplace
-                </a>
-                <a
-                  href="#"
-                  className="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-gray-50"
-                >
-                  Company
-                </a>
+                <Link>
+                  <a
+                    href="#"
+                    className="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-gray-50"
+                  >
+                    Features
+                  </a>
+                </Link>
+
+                <Link>
+                  <a
+                    href="#"
+                    className="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-gray-50"
+                  >
+                    Marketplace
+                  </a>
+                </Link>
+
+                <Link>
+                  <a
+                    href="#"
+                    className="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-gray-50"
+                  >
+                    Company
+                  </a>
+                </Link>
               </div>
               <div className="py-6">
-                <a
-                  href="#"
-                  className="-mx-3 block rounded-lg px-3 py-2.5 text-base/7 font-semibold text-gray-900 hover:bg-gray-50"
-                >
-                  Log in
-                </a>
+                <Link to={"/cart"}>
+                  <a className="-mx-3 block rounded-lg px-3 py-2.5 text-2xl font-semibold text-gray-900 hover:bg-gray-50">
+                    <LuShoppingCart />
+                  </a>
+                </Link>
+              </div>
+              <div className="py-6">
+                <Link to={"/login"}>
+                  <a className="-mx-3 block rounded-lg px-3 py-2.5 text-base/7 font-semibold text-gray-900 hover:bg-gray-50">
+                    Log in
+                  </a>
+                </Link>
               </div>
             </div>
           </div>

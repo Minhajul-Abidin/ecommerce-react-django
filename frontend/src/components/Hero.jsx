@@ -40,7 +40,7 @@ function Hero() {
   };
 
   return (
-    <div className="w-full h-[88vh] bg-gray-300 m-auto px-4 py-6 relative group">
+    <div className="w-full h-[88vh] m-auto px-4 py-6 relative group">
       <div
         style={{ backgroundImage: `url(${slides[currentIndex].url})` }}
         className="w-full h-full rounded-2xl bg-no-repeat bg-cover bg-center transition-all duration-300"
