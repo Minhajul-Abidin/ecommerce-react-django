@@ -1,6 +1,5 @@
 import { useState } from "react";
 import { BsChevronLeft, BsChevronRight } from "react-icons/bs";
-// import { RxDotFilled } from "react-icons/rx";
 
 function Hero() {
   const slides = [
