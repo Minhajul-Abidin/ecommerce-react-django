@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { BsChevronLeft, BsChevronRight } from "react-icons/bs";
-import { RxDotFilled } from "react-icons/rx";
+// import { RxDotFilled } from "react-icons/rx";
 
 function Hero() {
   const slides = [
@@ -60,10 +60,10 @@ function Hero() {
           <div
             key={index}
             onClick={() => goToSlide(index)}
-            className="text-2xl cursor-pointer"
-          >
-            <RxDotFilled />
-          </div>
+            className={`cursor-pointer ${
+              currentIndex === index ? "bg-gray-700" : "bg-gray-400"
+            } w-2 h-2 rounded-full my-1 mx-2 hover:bg-gray-600 transition-all duration-300`}
+          ></div>
         ))}
       </div>
     </div>
