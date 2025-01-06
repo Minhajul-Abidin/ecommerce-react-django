@@ -2,7 +2,7 @@ import PropTypes from "prop-types";
 
 function Item({ image, name, new_price, old_price }) {
   return (
-    <div className="w-80 hover:transform hover:scale-105 transition duration-300 ease-in-out">
+    <div className="w-auto hover:transform hover:scale-105 transition duration-300 ease-in-out">
       <img src={image} className="rounded-lg" />
       <p className="m-1">{name}</p>
       <div className="flex gap-7">

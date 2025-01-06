@@ -1,4 +1,5 @@
 import Hero from "../components/Hero";
+import Offers from "../components/Offers";
 import Popular from "../components/Popular";
 
 function Home() {
@@ -6,6 +7,7 @@ function Home() {
     <div>
       <Hero />
       <Popular />
+      <Offers />
     </div>
   );
 }
